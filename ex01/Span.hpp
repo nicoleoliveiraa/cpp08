@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 14:08:29 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/11/11 17:48:33 by nsouza-o         ###   ########.fr       */
+/*   Created: 2024/11/11 15:28:44 by nsouza-o          #+#    #+#             */
+/*   Updated: 2024/11/11 15:29:55 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef EASYFIND_HPP
-#define EASYFIND_HPP
+#ifndef SPAN_HPP
+#define SPAN_HPP
 
 #include <iostream>
-#include <algorithm>
+#include <vector>
 
-template <typename T>
-typename std::enable_if<is_container<T>::value, int&>::type
-int& easyfind(T& cont, int search)
-{
-	typename T::iterator easyFind;
-	
-	easyFind = std::find(cont.begin(), cont.end(), search);
-	if (easyFind == cont.end())
-		throw std::runtime_error("Not found!");
-	else 
-		return (*easyFind);
-}
+class Span {
+private:
+	std::vector<int> 
+public:
+	Span();
+	Span(const Span& src);
+	Span& operator=(const Span& src);
+	~Span();
+};
 
-#endif
+#endif // SPAN_HPP
